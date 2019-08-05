@@ -1,0 +1,8 @@
+<div class="search-box">
+    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+</div>
+<ul *ngFor="let movie of moviesArray">
+    <li>{{movie.title}}</li>
+</ul>
+
+<router-outlet></router-outlet>

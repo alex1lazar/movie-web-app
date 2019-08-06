@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Movie } from './movie';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   myTitle = 'MuvieHub';
+  movies = [];
+  onMovies(movies: Movie[]) {
+    this.movies = movies;
+  }
 }

@@ -1,18 +1,23 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { Injectable, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Movie } from './movie';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  url = 'http://www.omdbapi.com/?apikey=[yourkey]&';
+  url = 'http://www.omdbapi.com/?apikey=154db7cd&s=';
 
   constructor(private http: HttpClient) { }
 
-  public getMovie() {
-    return this.http.get<Movie[]>(`${this.url}/movie`);
+  public getMovieTitle(title: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.url}${title}`)
+      .pipe(
+        map(response => response['Search'].map(movie => new Movie(movie)))
+      );
   }
 
 }

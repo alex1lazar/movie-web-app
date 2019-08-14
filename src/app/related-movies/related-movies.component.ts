@@ -11,21 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class RelatedMoviesComponent implements OnInit {
 
   @Input() movies: Movie[];
-  //@Input() 
+
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
   ) { }
 
   ngOnInit() {
-  //   this.getRelatedMovies();
    }
-
-  // public getRelatedMovies() {
-  //   const something = 'harry';
-  //   this.searchService.getMovieTitle(something)
-  //     .subscribe(movie => this.movie = movie);
-  // }
-
 
 }

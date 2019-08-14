@@ -16,6 +16,7 @@ export class SearchService {
   public getMovieTitle(title: string): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.url}${title}`)
       .pipe(
+        // tslint:disable-next-line: no-string-literal
         map(response => response['Search'].map(movie => new Movie(movie)))
       );
   }

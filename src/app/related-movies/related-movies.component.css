@@ -1,0 +1,22 @@
+table,
+tr,
+td {
+    font-family: 'Helvetica Neue', sans-serif;
+    border: 1px solid gray;
+    text-decoration: none;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ac918e;
+}
+
+table tr:nth-child(even), thead{
+    background-color: #77756d;
+}

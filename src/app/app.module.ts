@@ -9,6 +9,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchService } from './search.service';
+import { SearchPageComponent } from './search-page/search-page.component';
 // import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 // import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 
@@ -17,7 +18,8 @@ import { SearchService } from './search.service';
     AppComponent,
     SearchBarComponent,
     RelatedMoviesComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,

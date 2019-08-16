@@ -1,6 +1,3 @@
-<!-- {{movies|json}} -->
-
-
 <table>
     <thead>
         <th>Title</th>
@@ -10,13 +7,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let movie of movies">
-            <td><!--<a [routerLink]="['movie-detail', movie.title]">-->
+            <td><a routerLinkAcrive="active" routerLink="/details/{{movie.imdbID}}">
                     {{movie.title | json}}
-                <!--</a> -->
+                </a>
             </td>
-            <td>{{movie.year | json}}</td>
-            <td>{{movie.imdbID | json}}</td>
-            <td>{{movie.type | json}}</td>
+            <td>{{movie.year}}</td>
+            <td>{{movie.imdbID}}</td>
+            <td>{{movie.type}}</td>
         </tr>
     </tbody>
 </table>

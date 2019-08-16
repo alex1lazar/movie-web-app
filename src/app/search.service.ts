@@ -1,7 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from './movie';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -14,11 +14,14 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   public getMovieTitle(title: string): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.url}${title}`)
+    return this.http.get<any>(`${this.url}${title}`)
       .pipe(
         // tslint:disable-next-line: no-string-literal
-        map(response => response['Search'].map(movie => new Movie(movie)))
+        map(response => response.Search.map(movie => new Movie(movie)))
       );
   }
 
+  // public getImdbID(id: string): Observable<Movie[]> {
+  //   return of(Movie.find(movie => movie.imdbID === id)
+  //   ); }
 }

@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable, of} from 'rxjs';
 import { SearchService } from '../search.service';
 import { Movie } from '../movie';
 
